@@ -12,200 +12,729 @@ import "../styles/global.css";
 
 	<body>
 		<main class="container">
-			<!-- 📬 Contact Section -->
-			<section id="contact" style="text-align: center">
-				<h2>Contact</h2>
-				<p>
-					<a href="mailto:atharvaj10.dev@gmail.com"
-						>atharvakamalakarjadhav@gmail.com</a
-					>
+			<!-- 👋 Hero -->
+			<section id="hero" class="hero">
+				<h1 class="hero-title">
+					Hello, I’m <span class="hero-name">Atharva Jadhav</span>
+				</h1>
+				<p class="hero-rotating">
+					<span class="rotating-text"></span>
 				</p>
-				<div class="socials">
-					<a
-						href="https://github.com/DrDrunkenstien-10"
-						target="_blank">GitHub</a
-					>
-					<a
-						href="https://www.linkedin.com/in/atharva-jadhav-491235243/"
-						target="_blank">LinkedIn</a
-					>
-					<a href="https://leetcode.com/u/AJ-10/" target="_blank"
-						>LeetCode</a
-					>
+			</section>
+
+			<!-- 🧑‍💻 Professional Summary -->
+			<section id="summary">
+				<div class="summary-card">
+					<ul class="summary-list">
+						<li>
+							<strong>Research Associate at</strong>
+							<a
+								href="https://ap-tech-solns.com/"
+								target="_blank"
+								rel="noopener"
+							>
+								<strong>ApTSi</strong>
+							</a>
+						</li>
+						<li>
+							Software engineer focused on designing and building
+							<strong
+								>secure, scalable, high-performance systems</strong
+							>
+						</li>
+						<li>
+							Hands-on experience with
+							<strong>Java, Spring Boot, and PostgreSQL</strong>
+						</li>
+						<li>
+							Experience with
+							<strong>DevSecOps practices</strong> including
+							<strong
+								>deployment on VPS and cloud platforms</strong
+							>
+						</li>
+					</ul>
 				</div>
 			</section>
 
-			<!-- 👋 Intro Section -->
-			<section id="intro">
-				<h1>Hello, I'm Atharva Jadhav 👋</h1>
+			<!-- 💼 Experience -->
+			<section id="experience">
+				<h2>Experience</h2>
 
-				<p>
-					I'm a Computer Science graduate working as a <strong
-						>Research Associate</strong
-					> at
-					<a href="https://ap-tech-solns.com/" target="_blank"
-						><strong>ApTSi</strong></a
-					>, a cybersecurity-focused startup. While my title reflects
-					research, I also work hands-on as a software engineer —
-					building secure, scalable systems.
-				</p>
+				<div class="experience-card">
+					<!-- Header -->
+					<div class="experience-header">
+						<div class="experience-org">
+							<a
+								href="https://ap-tech-solns.com/"
+								target="_blank"
+								rel="noopener"
+								class="org-link"
+							>
+								<span class="org-name"
+									>Applied Technology Solutions (ApTSi)</span
+								>
+							</a>
+						</div>
 
-				<p>
-					I’ve led the development of <strong
-						>three cybersecurity SaaS products</strong
-					> focused on
-					<strong>asset management</strong>, <strong
-						>digital identity</strong
-					>, and
-					<strong>data protection</strong>. These solutions align with
-					the <strong>Zero Trust principles</strong> defined by <a
-						href="https://www.opengroup.org/"
-						target="_blank"
-					>
-						<strong>The Open Group</strong></a
-					>.
-				</p>
+						<div class="experience-meta">
+							<span class="experience-duration"
+								><strong>July 2024 – Present</strong></span
+							>
+							<span class="experience-location"
+								><strong>United States (Remote)</strong></span
+							>
+						</div>
+					</div>
 
-				<p>
-					I specialize in the <strong
-						>Java + Spring Boot ecosystem</strong
-					> with experience across cloud, DevOps, and observability tooling.
-				</p>
+					<!-- Bullet points -->
+					<ul class="experience-points">
+						<li>
+							Designed and developed <strong
+								>three Zero Trust–based cybersecurity SaaS
+								products</strong
+							>, delivering the first production release and
+							supporting early customer adoption.
+						</li>
+						<li>
+							Architected and implemented <strong
+								>cloud-native deployment architecture on Azure</strong
+							>
+							with a strong focus on cost optimization and operational
+							efficiency.
+						</li>
+						<li>
+							Deployed and operated the platform <strong
+								>from scratch on Azure</strong
+							>, ensuring stability and availability during
+							business hours.
+						</li>
+						<li>
+							Built <strong
+								>fully automated infrastructure provisioning and
+								teardown pipelines</strong
+							>, enabling one-click deployments with zero manual
+							intervention.
+						</li>
+						<li>
+							Designed and implemented a <strong
+								>centralized audit logging framework</strong
+							>
+							to support traceability, security compliance, and system
+							observability.
+						</li>
+					</ul>
 
-				<p>
-					I enjoy solving real-world engineering problems and building
-					software that makes an impact.
-				</p>
+					<!-- Tech stack -->
+					<div class="experience-tech">
+						<div class="tech-heading">
+							<span class="tech-heading-text">Tech Stack</span>
+						</div>
+
+						<div class="tech-icons">
+							<a
+								class="tech-item"
+								data-label="Java"
+								href="https://www.java.com/"
+								target="_blank"
+							>
+								<img src="/icons/Java.svg" alt="Java" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="TypeScript"
+								href="https://www.typescriptlang.org/"
+								target="_blank"
+							>
+								<img
+									src="/icons/TypeScript.svg"
+									alt="TypeScript"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="C++"
+								href="https://isocpp.org/"
+								target="_blank"
+							>
+								<img src="/icons/Cpp.svg" alt="C++" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Bash"
+								href="https://www.gnu.org/software/bash/bash.html"
+								target="_blank"
+							>
+								<img src="/icons/Bash.svg" alt="Bash" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Spring Boot"
+								href="https://spring.io/projects/spring-boot"
+								target="_blank"
+							>
+								<img
+									src="/icons/Spring.svg"
+									alt="Spring Boot"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="Express.js"
+								href="https://expressjs.com/"
+								target="_blank"
+							>
+								<img
+									src="/icons/Express.png"
+									alt="Express.js"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="Keycloak"
+								href="https://www.keycloak.org/"
+								target="_blank"
+							>
+								<img src="/icons/Keycloak.png" alt="Keycloak" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Angular"
+								href="https://angular.io/"
+								target="_blank"
+							>
+								<img src="/icons/Angular.svg" alt="Angular" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="PostgreSQL"
+								href="https://www.postgresql.org/"
+								target="_blank"
+							>
+								<img
+									src="/icons/PostgresSQL.svg"
+									alt="PostgreSQL"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="Kafka"
+								href="https://kafka.apache.org/"
+								target="_blank"
+							>
+								<img src="/icons/Kafka.png" alt="Kafka" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="RabbitMQ"
+								href="https://www.rabbitmq.com/"
+								target="_blank"
+							>
+								<img src="/icons/RabbitMQ.svg" alt="RabbitMQ" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Microsoft Azure"
+								href="https://azure.microsoft.com/"
+								target="_blank"
+							>
+								<img src="/icons/Azure.svg" alt="Azure" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Kubernetes"
+								href="https://kubernetes.io/"
+								target="_blank"
+							>
+								<img
+									src="/icons/Kubernetes.svg"
+									alt="Kubernetes"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="Docker"
+								href="https://www.docker.com/"
+								target="_blank"
+							>
+								<img src="/icons/Docker.svg" alt="Docker" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="NGINX"
+								href="https://www.nginx.com/"
+								target="_blank"
+							>
+								<img src="/icons/NGINX.svg" alt="NGINX" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="OpenTofu"
+								href="https://opentofu.org/"
+								target="_blank"
+							>
+								<img src="/icons/OpenTofu.svg" alt="OpenTofu" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Ansible"
+								href="https://www.ansible.com/"
+								target="_blank"
+							>
+								<img src="/icons/Ansible.svg" alt="Ansible" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Jenkins"
+								href="https://www.jenkins.io/"
+								target="_blank"
+							>
+								<img src="/icons/Jenkins.svg" alt="Jenkins" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Maven"
+								href="https://maven.apache.org/"
+								target="_blank"
+							>
+								<img src="/icons/Maven.svg" alt="Maven" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="NPM"
+								href="https://www.npmjs.com/"
+								target="_blank"
+							>
+								<img src="/icons/NPM.svg" alt="NPM" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Prometheus"
+								href="https://prometheus.io/"
+								target="_blank"
+							>
+								<img
+									src="/icons/Prometheus.svg"
+									alt="Prometheus"
+								/>
+							</a>
+							<a
+								class="tech-item"
+								data-label="Grafana"
+								href="https://grafana.com/"
+								target="_blank"
+							>
+								<img src="/icons/Grafana.svg" alt="Grafana" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Loki"
+								href="https://grafana.com/oss/loki/"
+								target="_blank"
+							>
+								<img src="/icons/Loki.svg" alt="Loki" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Ubuntu"
+								href="https://ubuntu.com/"
+								target="_blank"
+							>
+								<img src="/icons/Ubuntu.svg" alt="Ubuntu" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="Git"
+								href="https://git-scm.com/"
+								target="_blank"
+							>
+								<img src="/icons/Git.svg" alt="Git" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="GitHub"
+								href="https://github.com/"
+								target="_blank"
+							>
+								<img src="/icons/Github.svg" alt="GitHub" />
+							</a>
+							<a
+								class="tech-item"
+								data-label="VS Code"
+								href="https://code.visualstudio.com/"
+								target="_blank"
+							>
+								<img src="/icons/VSCode.svg" alt="VS Code" />
+							</a>
+						</div>
+					</div>
+				</div>
 			</section>
 
-			<!-- 🛠 Projects Section -->
+			<!-- 🛠 Projects -->
 			<section id="projects">
 				<h2>Projects</h2>
 				<div class="projects-grid">
+					<!-- ================= MinuteMuse ================= -->
 					<div class="project-card">
-						<strong>MinuteMuse</strong>
-						<p>
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">MinuteMuse</h3>
+
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/minute-muse"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p class="project-description">
 							An AI-powered tool that generates meeting minutes
 							from recordings.
 						</p>
-						<a
-							href="https://github.com/DrDrunkenstien-10/minute-muse"
-							target="_blank">GitHub</a
-						>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Python">
+									<img src="/icons/Python.svg" alt="Python" />
+								</span>
+								<span class="tech-item" data-label="Flask">
+									<img src="/icons/Flask.svg" alt="Flask" />
+								</span>
+								<span class="tech-item" data-label="ffmpeg">
+									<img src="/icons/ffmpeg.svg" alt="ffmpeg" />
+								</span>
+								<span class="tech-item" data-label="Whisper AI">
+									<img
+										src="/icons/Whisper.svg"
+										alt="Whisper AI"
+									/>
+								</span>
+								<span class="tech-item" data-label="Mistral AI">
+									<img
+										src="/icons/Mistral.png"
+										alt="Mistral AI"
+									/>
+								</span>
+							</div>
+						</div>
 					</div>
 
+					<!-- ================= Deplens ================= -->
 					<div class="project-card">
-						<strong>Wealthwise</strong>
-						<p>
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">Deplens</h3>
+
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/deplens"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p class="project-description">
+							A CLI tool that scans project dependencies for
+							licenses, vulnerabilities (CVEs), and version
+							health.
+						</p>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Java">
+									<img src="/icons/Java.svg" alt="Java" />
+								</span>
+								<span class="tech-item" data-label="Maven">
+									<img src="/icons/Maven.svg" alt="Maven" />
+								</span>
+								<span class="tech-item" data-label="Picocli">
+									<img
+										src="/icons/Picocli.svg"
+										alt="Picocli"
+									/>
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Wealthwise-->
+					<div class="project-card">
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">Wealthwise</h3>
+
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/wealthwise"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+
+								<a
+									href="https://wealthwise.ajadhav.com/"
+									target="_blank"
+									aria-label="Live Demo"
+								>
+									<img
+										src="/icons/Link.png"
+										alt="Live Demo"
+									/>
+								</a>
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p class="project-description">
 							A modern personal finance manager to track income,
 							expenses, savings, receipts, and recurring
 							transactions with a clean dashboard and charts.
 						</p>
-						<a
-							href="https://github.com/DrDrunkenstien-10/wealthwise-ui"
-							target="_blank">Frontend</a
-						> |
-						<a
-							href="https://github.com/DrDrunkenstien-10/wealthwise"
-							target="_blank">Backend</a
-						> |
-						<a href="https://wealthwise.ajadhav.com" target="_blank"
-							>Live Demo</a
-						>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Java">
+									<img src="/icons/Java.svg" alt="Java" />
+								</span>
+								<span
+									class="tech-item"
+									data-label="Spring Boot"
+								>
+									<img
+										src="/icons/Spring.svg"
+										alt="Spring Boot"
+									/>
+								</span>
+								<span class="tech-item" data-label="JavaScript">
+									<img
+										src="/icons/JavaScript.svg"
+										alt="JavaScript"
+									/>
+								</span>
+								<span class="tech-item" data-label="React">
+									<img src="/icons/React.svg" alt="React" />
+								</span>
+								<span class="tech-item" data-label="Keycloak">
+									<img
+										src="/icons/Keycloak.png"
+										alt="Keycloak"
+									/>
+								</span>
+								<span class="tech-item" data-label="PostgreSQL">
+									<img
+										src="/icons/PostgresSQL.svg"
+										alt="PostgreSQL"
+									/>
+								</span>
+								<span class="tech-item" data-label="Maven">
+									<img src="/icons/Maven.svg" alt="Maven" />
+								</span>
+							</div>
+						</div>
 					</div>
 
+					<!--Aufgabenliste -->
 					<div class="project-card">
-						<strong>Patient Management System</strong>
-						<p>
-							SaaS product to manage a clinic. Manage doctors,
-							receptionists, book/reschedule/cancel appointments,
-							view dashboards and reports. Work in progress.
-						</p>
-						<a
-							href="https://github.com/Prad001/patient-management-ui"
-							target="_blank">Frontend</a
-						> |
-						<a
-							href="https://github.com/DrDrunkenstien-10/patient-management"
-							target="_blank">Backend</a
-						>
-					</div>
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">Aufgabenliste</h3>
 
-					<div class="project-card">
-						<strong>WikiSearch</strong>
-						<p>
-							Simple search engine using an inverted index applied
-							to a collection of Wikipedia articles.
-						</p>
-						<a
-							href="https://github.com/DrDrunkenstien-10/wiki-search"
-							target="_blank">GitHub</a
-						>
-					</div>
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/aufgabenliste"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+							</div>
+						</div>
 
-					<div class="project-card">
-						<strong>Aufgabenliste</strong>
-						<p>
+						<!-- Description -->
+						<p class="project-description">
 							A simple task management web application. The app
 							supports creating, updating, deleting, and filtering
 							tasks with status and date filters. It’s fully
 							Dockerized for easy setup.
 						</p>
-						<a
-							href="https://github.com/DrDrunkenstien-10/aufgabenliste"
-							target="_blank">GitHub</a
-						>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Java">
+									<img src="/icons/Java.svg" alt="Java" />
+								</span>
+								<span
+									class="tech-item"
+									data-label="Spring Boot"
+								>
+									<img
+										src="/icons/Spring.svg"
+										alt="Spring Boot"
+									/>
+								</span>
+								<span class="tech-item" data-label="PostgreSQL">
+									<img
+										src="/icons/PostgresSQL.svg"
+										alt="PostgreSQL"
+									/>
+								</span>
+								<span class="tech-item" data-label="Maven">
+									<img src="/icons/Maven.svg" alt="Maven" />
+								</span>
+								<span class="tech-item" data-label="HTML">
+									<img src="/icons/HTML5.svg" alt="HTML" />
+								</span>
+								<span class="tech-item" data-label="CSS">
+									<img src="/icons/CSS3.svg" alt="CSS" />
+								</span>
+								<span class="tech-item" data-label="JavaScript">
+									<img
+										src="/icons/JavaScript.svg"
+										alt="JavaScript"
+									/>
+								</span>
+								<span class="tech-item" data-label="Docker">
+									<img src="/icons/Docker.svg" alt="Docker" />
+								</span>
+							</div>
+						</div>
 					</div>
 
+					<!--WikiSearch -->
 					<div class="project-card">
-						<strong>Playfair Cipher</strong>
-						<p>
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">WikiSearch</h3>
+
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/wiki-search"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p class="project-description">
+							Simple search engine using an inverted index applied
+							to a collection of Wikipedia articles.
+						</p>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Java">
+									<img src="/icons/Java.svg" alt="Java" />
+								</span>
+								<span class="tech-item" data-label="Maven">
+									<img src="/icons/Maven.svg" alt="Maven" />
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Playfair Cipher -->
+					<div class="project-card">
+						<!-- Header -->
+						<div class="project-header">
+							<h3 class="project-title">Playfair Cipher</h3>
+
+							<div class="project-links">
+								<a
+									href="https://github.com/DrDrunkenstien-10/playfair-cipher"
+									target="_blank"
+									aria-label="GitHub"
+								>
+									<img src="/icons/Github.svg" alt="GitHub" />
+								</a>
+							</div>
+						</div>
+
+						<!-- Description -->
+						<p class="project-description">
 							Java implementation of Playfair Cipher encryption
 							algorithm.
 						</p>
-						<a
-							href="https://github.com/DrDrunkenstien-10/playfair-cipher"
-							target="_blank">GitHub</a
-						>
+
+						<!-- Technologies -->
+						<div class="project-tech">
+							<span class="tech-label">Technologies</span>
+
+							<div class="tech-icons">
+								<span class="tech-item" data-label="Java">
+									<img src="/icons/Java.svg" alt="Java" />
+								</span>
+								<span class="tech-item" data-label="Maven">
+									<img src="/icons/Maven.svg" alt="Maven" />
+								</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<!-- 💻 Tech Stack Section -->
-			<section id="tech-stack">
-				<h2>Tech Stack</h2>
-				<div class="stack-grid">
-					<div class="stack-category">
-						<h3>Languages</h3>
-						<ul>
-							<li>Java</li>
-							<li>Python</li>
-							<li>TypeScript</li>
-						</ul>
-					</div>
-					<div class="stack-category">
-						<h3>Frameworks</h3>
-						<ul>
-							<li>Spring Boot</li>
-							<li>React</li>
-							<li>Angular</li>
-							<li>Astro</li>
-						</ul>
-					</div>
-					<div class="stack-category">
-						<h3>Tools & Platforms</h3>
-						<ul>
-							<li>PostgreSQL</li>
-							<li>Kafka / RabbitMQ</li>
-							<li>Keycloak</li>
-							<li>Docker</li>
-							<li>Terraform / Ansible</li>
-							<li>Azure</li>
-							<li>Jenkins</li>
-						</ul>
-					</div>
+			<!-- 📬 Footer -->
+			<footer id="footer">
+				<div class="footer-icons">
+					<a
+						href="https://www.linkedin.com/in/atharva-jadhav-491235243/"
+						target="_blank"
+						aria-label="LinkedIn"
+						class="footer-icon"
+					>
+						<img src="/icons/LinkedIn.svg" alt="LinkedIn" />
+					</a>
+
+					<a
+						href="https://github.com/DrDrunkenstien-10"
+						target="_blank"
+						aria-label="GitHub"
+						class="footer-icon"
+					>
+						<img src="/icons/Github.svg" alt="GitHub" />
+					</a>
+
+					<a
+						href="mailto:atharvakamalakarjadhav@gmail.com"
+						aria-label="Email"
+						class="footer-icon"
+					>
+						<img src="/icons/Gmail.svg" alt="Email" />
+					</a>
 				</div>
-			</section>
+
+				<p class="footer-text">
+					© 2025 Atharva Jadhav. All rights reserved.
+				</p>
+			</footer>
 		</main>
 	</body>
 </html>
