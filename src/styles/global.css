@@ -19,6 +19,16 @@
    Reset & Base
    ============================ */
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +40,7 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.65;
-  padding: 1.5rem;
+  padding: 0;
 }
 
 a {
@@ -53,7 +63,8 @@ a:hover {
 }
 
 section {
-  padding: 2.5rem 0;
+  padding: 2.5rem 1.5rem;
+  scroll-margin-top: 80px;
 }
 
 .centered {
@@ -88,6 +99,90 @@ li {
 #hero {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
+  scroll-margin-top: 80px;
+}
+
+/* ============================
+   Header
+   ============================ */
+
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 12, 18, 0.75);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo .accent {
+  color: var(--color-accent);
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d7dbe6;
+  position: relative;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  transition: color 0.2s ease;
+}
+
+
+/* Hover underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+/* .nav-links a:hover {
+  color: #ffffff;
+} */
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links a:active,
+.nav-links a:focus-visible {
+  color: #ffffff;
 }
 
 /* ============================
@@ -399,7 +494,6 @@ li {
 
 .project-tech {
   margin-top: auto;
-  /* 🔥 Pushes technologies to bottom */
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -511,4 +605,31 @@ li {
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  #site-header {
+    backdrop-filter: none;
+    /* safer on mobile */
+    background: rgba(10, 12, 18, 0.95);
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
 }
