@@ -115,19 +115,19 @@ const isBlogIndex = Astro.url.pathname === "/blog";
   }
 
   .blog-desc {
-    margin-bottom: 2.5rem; /* a bit more breathing room */
-    opacity: 0.95; /* more readable */
-    font-size: 1.1rem; /* slightly larger */
-    line-height: 1.6; /* better line spacing */
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    font-size: 1.1rem;
+    line-height: 1.6;
     border-bottom: 1px solid var(--color-border);
-    padding-bottom: 1.5rem; /* more spacing for separation */
-    color: var(--text-color, #e0e0e0); /* improve contrast in dark mode */
+    padding-bottom: 1.5rem;
+    color: var(--text-color, #e0e0e0);
   }
 
   /* CONTENT */
   .blog-content {
     max-width: 70ch;
-    line-height: 1.75; /* slightly more spacing for paragraphs */
+    line-height: 1.75;
     font-size: 1.1rem;
   }
 
@@ -137,23 +137,24 @@ const isBlogIndex = Astro.url.pathname === "/blog";
   }
 
   /* Back button */
-.back-to-blog {
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--color-border);
-  display: inline-block;
-  margin-bottom: 1.8rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  text-decoration: none;
-  opacity: 0.9;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  cursor: pointer;
-}
+  .back-to-blog {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--color-border);
+    display: inline-block;
+    margin-bottom: 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    opacity: 0.9;
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+    cursor: pointer;
+  }
 
-.back-to-blog:hover {
-  opacity: 1;
-  transform: translateX(-4px);
-}
-
+  .back-to-blog:hover {
+    opacity: 1;
+    transform: translateX(-4px);
+  }
 </style>

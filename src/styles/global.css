@@ -171,10 +171,6 @@ li {
   transition: transform 0.25s ease;
 }
 
-/* .nav-links a:hover {
-  color: #ffffff;
-} */
-
 .nav-links a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -423,7 +419,7 @@ li {
 }
 
 /* ============================
-   Project Cards – Enhanced
+   Project Cards
    ============================ */
 
 .projects-grid {
@@ -489,7 +485,7 @@ li {
 }
 
 /* ============================
-   Technologies (Pinned Bottom)
+   Technologies
    ============================ */
 
 .project-tech {

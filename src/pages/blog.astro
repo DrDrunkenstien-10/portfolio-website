@@ -34,6 +34,7 @@ const posts = await Astro.glob("./posts/*.md");
     gap: 18px;
     margin-top: 2rem;
   }
+
   .blog-card {
     padding: 18px 22px;
     background: var(--color-box-bg);
@@ -44,10 +45,12 @@ const posts = await Astro.glob("./posts/*.md");
     transition: 0.2s;
     cursor: pointer;
   }
+
   .blog-card:hover {
     border-color: var(--color-accent);
     transform: translateY(-3px);
   }
+
   .blog-date {
     color: #00ff90;
     font-size: 0.95rem;
@@ -55,6 +58,7 @@ const posts = await Astro.glob("./posts/*.md");
     letter-spacing: 0.3px;
     margin: 4px 0 0;
   }
+
   .blog-desc {
     margin: 0.4rem 0 0;
   }
