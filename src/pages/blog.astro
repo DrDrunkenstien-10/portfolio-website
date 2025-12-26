@@ -11,11 +11,17 @@ const posts = await Astro.glob("./posts/*.md");
   <div class="blog-list">
     {
       posts.map((post) => (
-        <a href={post.url} class="blog-card">
+        <article
+          class="blog-card"
+          onclick={`location.href='${post.url}'`}
+          role="link"
+          tabindex="0"
+          onkeydown="if(event.key==='Enter'){location.href=this.onclick.toString().match(/'(.*?)'/)[1]}"
+        >
           <h2>{post.frontmatter.title}</h2>
           <p class="blog-date">{post.frontmatter.date}</p>
           <p class="blog-desc">{post.frontmatter.description}</p>
-        </a>
+        </article>
       ))
     }
   </div>
@@ -36,13 +42,14 @@ const posts = await Astro.glob("./posts/*.md");
     color: var(--color-text);
     text-decoration: none;
     transition: 0.2s;
+    cursor: pointer;
   }
   .blog-card:hover {
     border-color: var(--color-accent);
     transform: translateY(-3px);
   }
   .blog-date {
-    color: #c6c8d1;
+    color: #00ff90;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.3px;

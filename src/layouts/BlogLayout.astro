@@ -12,6 +12,7 @@ const {
 const title = frontmatter?.title ?? pageTitle;
 const date = frontmatter?.date ?? pageDate;
 const description = frontmatter?.description ?? pageDescription;
+const isBlogIndex = Astro.url.pathname === "/blog";
 ---
 
 <html lang="en">
@@ -38,11 +39,18 @@ const description = frontmatter?.description ?? pageDescription;
     </header>
 
     <main class="blog-container">
+      {
+        !isBlogIndex && (
+          <a href="/blog" class="back-to-blog" aria-label="Back to blog list">
+            ← Back to Blog
+          </a>
+        )
+      }
+
       <h1 class="blog-title">{title}</h1>
       {date && <p class="blog-date">{date}</p>}
       {description && <p class="blog-desc">{description}</p>}
 
-      <!-- Apply markdown class here -->
       <article class="markdown">
         <slot />
       </article>
@@ -98,13 +106,11 @@ const description = frontmatter?.description ?? pageDescription;
     color: var(--text-color, #fff);
   }
 
-  /* META */
   .blog-date {
-    color: #00ff90; /* eye-catching color */
+    color: #00ff90;
     font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     margin-bottom: 0.8rem;
   }
 
@@ -129,4 +135,25 @@ const description = frontmatter?.description ?? pageDescription;
   .blog-content ol ol {
     margin-left: 1.5rem;
   }
+
+  /* Back button */
+.back-to-blog {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  display: inline-block;
+  margin-bottom: 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.back-to-blog:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
 </style>
