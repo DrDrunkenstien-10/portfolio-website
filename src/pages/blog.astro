@@ -1,0 +1,54 @@
+---
+import BlogLayout from "../layouts/BlogLayout.astro";
+
+// Dynamically import markdown posts
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<BlogLayout title="Blog">
+  <p>Stories, notes & engineering knowledge.</p>
+
+  <div class="blog-list">
+    {
+      posts.map((post) => (
+        <a href={post.url} class="blog-card">
+          <h2>{post.frontmatter.title}</h2>
+          <p class="blog-date">{post.frontmatter.date}</p>
+          <p class="blog-desc">{post.frontmatter.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</BlogLayout>
+
+<style>
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 2rem;
+  }
+  .blog-card {
+    padding: 18px 22px;
+    background: var(--color-box-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  .blog-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+  .blog-date {
+    color: #c6c8d1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin: 4px 0 0;
+  }
+  .blog-desc {
+    margin: 0.4rem 0 0;
+  }
+</style>

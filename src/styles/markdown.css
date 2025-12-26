@@ -1,0 +1,60 @@
+/* Restore browser defaults that CSS resets usually wipe out */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown pre,
+.markdown hr {
+    margin: revert;
+    padding: revert;
+}
+
+/* Typography */
+.markdown {
+    max-width: 70ch;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.markdown * {
+    margin: revert;
+    padding: revert;
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+    margin-left: 1.5rem;
+}
+
+.markdown ul ul,
+.markdown ol ol {
+    margin-left: 1.2rem;
+}
+
+.markdown li {
+    margin: 0.3em 0;
+}
+
+/* HR for section breaks */
+.markdown hr {
+    border: none;
+    height: 1px;
+    background: var(--color-border, #ddd);
+    margin: 2rem 0;
+}
+
+/* Optional: Code blocks look better */
+.markdown pre {
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    background: #1e1e1e;
+    color: #fff;
+}
