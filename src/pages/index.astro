@@ -1,13 +1,24 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import SEO from "../components/SEO.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Atharva | Portfolio</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
+
+		<SEO
+			title="Atharva | Portfolio"
+			description="Portfolio and blog of Atharva Jadhav — Software Engineer sharing projects, learnings, and experiences."
+			canonical={new URL(Astro.url.pathname, Astro.site)}
+			image={`${Astro.site}/og/default.png`}
+			type="website"
+		/>
+
+		<ClientRouter />
 	</head>
 
 	<body>
@@ -23,7 +34,7 @@ import "../styles/global.css";
 					<a href="/blog">Blog</a>
 					<a href="#experience">Experience</a>
 					<a href="#projects">Projects</a>
-					<a href="#footer">Contact</a>
+					<a href="/contact">Contact</a>
 				</nav>
 			</div>
 		</header>

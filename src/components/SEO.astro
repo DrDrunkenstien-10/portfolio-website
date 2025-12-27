@@ -1,0 +1,23 @@
+---
+const {
+    title = "Atharva Jadhav",
+    description = "Portfolio and blog of Atharva Jadhav — Software Engineer sharing projects, learnings, and experiences.",
+    canonical = "https://ajadhav.com",
+    image = "https://ajadhav.com/og/default.png",
+    type = "website",
+} = Astro.props;
+---
+
+<head>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={title} />
+</head>

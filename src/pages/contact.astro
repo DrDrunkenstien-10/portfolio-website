@@ -1,0 +1,356 @@
+---
+import ContactLayout from "../layouts/ContactLayout.astro";
+---
+
+<ContactLayout title="Contact">
+    <p class="contact-subheading">
+        Reach out for opportunities, collaboration, or just to say hi and
+        connect with me.
+    </p>
+
+    <!-- Primary contact options -->
+    <div class="contact-primary-socials">
+        <a
+            href="https://www.linkedin.com/in/atharva-jadhav-491235243/"
+            target="_blank"
+            aria-label="LinkedIn"
+        >
+            <img src="/icons/LinkedIn.svg" alt="LinkedIn" />
+        </a>
+
+        <a
+            href="https://github.com/DrDrunkenstien-10"
+            target="_blank"
+            aria-label="GitHub"
+        >
+            <img src="/icons/Github.svg" alt="GitHub" />
+        </a>
+
+        <a href="mailto:atharvakamalakarjadhadh@gmail.com" aria-label="Email">
+            <img src="/icons/Gmail.svg" alt="Email" />
+        </a>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+        <label>
+            Name*
+            <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+                maxlength="100"
+            />
+            <span class="error-message"></span>
+        </label>
+
+        <label>
+            Email*
+            <input
+                type="email"
+                name="email"
+                placeholder="email@example.com"
+                required
+                maxlength="100"
+            />
+            <span class="error-message"></span>
+        </label>
+
+        <label>
+            Message*
+            <textarea
+                name="message"
+                placeholder="Write your message..."
+                required
+                maxlength="1000"></textarea>
+            <span class="error-message"></span>
+        </label>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <script>
+        const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL;
+
+        (() => {
+            const form = document.getElementById(
+                "contactForm",
+            ) as HTMLFormElement | null;
+
+            const statusEl = document.getElementById(
+                "formStatus",
+            ) as HTMLParagraphElement | null;
+
+            if (!form || !statusEl) return;
+
+            const submitBtn = form.querySelector(
+                "button[type='submit']",
+            ) as HTMLButtonElement | null;
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                let isValid = true;
+
+                type Field = HTMLInputElement | HTMLTextAreaElement;
+
+                const fields: Record<
+                    string,
+                    { element: Field; max: number; message: string }
+                > = {
+                    name: {
+                        element: form.elements.namedItem("name") as Field,
+                        max: 100,
+                        message: "Name should not exceed 100 characters.",
+                    },
+                    email: {
+                        element: form.elements.namedItem("email") as Field,
+                        max: 100,
+                        message: "Email should not exceed 100 characters.",
+                    },
+                    message: {
+                        element: form.elements.namedItem("message") as Field,
+                        max: 1000,
+                        message: "Message should not exceed 1000 characters.",
+                    },
+                };
+
+                // Clear previous errors
+                form.querySelectorAll(".error-message").forEach(
+                    (el) => (el.textContent = ""),
+                );
+                statusEl.textContent = "";
+                statusEl.className = "form-status";
+
+                // Client-side validation
+                Object.values(fields).forEach(({ element, max, message }) => {
+                    if (!element.value.trim()) {
+                        element.nextElementSibling!.textContent =
+                            "This field is required.";
+                        isValid = false;
+                    } else if (element.value.length > max) {
+                        element.nextElementSibling!.textContent = message;
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) return;
+
+                const payload = {
+                    name: fields.name.element.value.trim(),
+                    email: fields.email.element.value.trim(),
+                    message: fields.message.element.value.trim(),
+                };
+
+                try {
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = "Sending...";
+                    }
+
+                    const response = await fetch(
+                        `${API_BASE_URL}/api/v1/contacts`,
+                        {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(payload),
+                        },
+                    );
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        // Rate limiting (Too Many Requests)
+                        if (response.status === 429) {
+                            const retryAfter =
+                                response.headers.get("Retry-After");
+
+                            statusEl.textContent = retryAfter
+                                ? `You're sending messages too frequently. Please try again in ${retryAfter} seconds.`
+                                : "You're sending messages too frequently. Please wait and try again.";
+
+                            statusEl.classList.add("error");
+
+                            if (submitBtn) {
+                                submitBtn.disabled = true;
+
+                                setTimeout(
+                                    () => {
+                                        submitBtn.disabled = false;
+                                    },
+                                    retryAfter
+                                        ? Number(retryAfter) * 1000
+                                        : 30_000,
+                                );
+                            }
+
+                            return;
+                        }
+
+                        // Field-level validation errors
+                        if (
+                            response.status === 400 &&
+                            typeof data === "object"
+                        ) {
+                            Object.entries(data).forEach(([field, message]) => {
+                                const fieldEl = fields[field]?.element;
+                                if (fieldEl) {
+                                    fieldEl.nextElementSibling!.textContent =
+                                        String(message);
+                                }
+                            });
+
+                            statusEl.textContent =
+                                "Please fix the highlighted errors.";
+                            statusEl.classList.add("error");
+                            return;
+                        }
+
+                        // Generic fallback
+                        throw new Error(
+                            data?.error ||
+                                "Something went wrong. Please try again.",
+                        );
+                    }
+
+                    // Success
+                    form.reset();
+                    statusEl.textContent =
+                        "Thanks! Your message has been sent successfully.";
+                    statusEl.classList.add("success");
+                } catch (err) {
+                    statusEl.textContent =
+                        err instanceof Error
+                            ? err.message
+                            : "Unable to send message right now.";
+                    statusEl.classList.add("error");
+                } finally {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Send Message";
+                    }
+                }
+            });
+        })();
+    </script>
+</ContactLayout>
+
+<style>
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .contact-form label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        font-weight: 600;
+        color: var(--text-color, #ddd);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem 1rem;
+        background: var(--color-box-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        color: var(--color-text);
+        font-size: 1rem;
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .contact-form button {
+        background: #ffffff;
+        border: none;
+        padding: 0.9rem 1.6rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        width: fit-content;
+        align-self: flex-start;
+    }
+
+    .contact-form button:hover {
+        opacity: 0.9;
+    }
+
+    .contact-subheading {
+        font-size: 1.15rem;
+        opacity: 0.85;
+        margin-top: -1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: var(--text-color, #e0e0e0);
+    }
+
+    .error-message {
+        color: #ff5757;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+        display: block;
+    }
+
+    /* Fix browser autofill background + text color */
+    .contact-form input:-webkit-autofill,
+    .contact-form input:-webkit-autofill:hover,
+    .contact-form input:-webkit-autofill:focus,
+    .contact-form textarea:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px var(--color-box-bg) inset !important;
+        -webkit-text-fill-color: var(--color-text) !important;
+        caret-color: var(--color-text);
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input:-moz-autofill,
+    textarea:-moz-autofill {
+        box-shadow: 0 0 0 1000px var(--color-box-bg) inset;
+        color: var(--color-text);
+    }
+
+    /* Primary socials (above the form) */
+    .contact-primary-socials {
+        display: flex;
+        gap: 1.4rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+    }
+
+    .contact-primary-socials img {
+        width: 26px;
+        height: 26px;
+        opacity: 0.85;
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .contact-primary-socials a:hover img {
+        opacity: 1;
+        transform: scale(1.18);
+        filter: drop-shadow(0 0 8px rgba(0, 255, 144, 0.45));
+    }
+
+    /* Form submission status */
+    .form-status {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .form-status.success {
+        color: #4ade80;
+    }
+
+    .form-status.error {
+        color: #ff5757;
+    }
+</style>

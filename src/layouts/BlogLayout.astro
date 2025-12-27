@@ -1,94 +1,111 @@
 ---
 import "../styles/global.css";
 import "../styles/markdown.css";
+import { ClientRouter } from "astro:transitions";
+import SEO from "../components/SEO.astro";
 
 const {
   title: pageTitle,
   date: pageDate,
   description: pageDescription,
+  image: pageImage,
   frontmatter,
 } = Astro.props;
 
 const title = frontmatter?.title ?? pageTitle;
 const date = frontmatter?.date ?? pageDate;
 const description = frontmatter?.description ?? pageDescription;
+const image = frontmatter?.image ?? pageImage ?? "/og/default.png";
+
 const isBlogIndex = Astro.url.pathname === "/blog";
+
+// 👇 Build canonical URL dynamically
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = image.startsWith("http") ? image : `${Astro.site}${image}`;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      {title ? `${title} | Atharva Jadhav` : "Atharva Jadhav"}
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="site-header">
-      <div class="header-container">
-        <a href="/" class="logo">Atharva<span class="accent">.</span></a>
-        <nav class="nav-links">
-          <a href="/blog">Blog</a>
-          <a href="/#experience">Experience</a>
-          <a href="/#projects">Projects</a>
-          <a href="/#footer">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <main class="blog-container">
-      {
-        !isBlogIndex && (
-          <a href="/blog" class="back-to-blog" aria-label="Back to blog list">
-            ← Back to Blog
-          </a>
-        )
-      }
+  <!-- SEO Component -->
+  <SEO
+    title={title ? `${title} | Atharva Jadhav` : "Atharva Jadhav"}
+    description={description ??
+      "Blog by Atharva Jadhav — Software Engineer sharing projects, learnings, and experiences."}
+    canonical={canonical}
+    image={ogImage}
+    type={isBlogIndex ? "website" : "article"}
+  />
 
-      <h1 class="blog-title">{title}</h1>
-      {date && <p class="blog-date">{date}</p>}
-      {description && <p class="blog-desc">{description}</p>}
+  <ClientRouter />
+</head>
 
-      <article class="markdown">
-        <slot />
-      </article>
-    </main>
+<body>
+  <!-- Header -->
+  <header id="site-header">
+    <div class="header-container">
+      <a href="/" class="logo">Atharva<span class="accent">.</span></a>
+      <nav class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#projects">Projects</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="footer-icons">
-        <a
-          href="https://www.linkedin.com/in/atharva-jadhav-491235243/"
-          target="_blank"
-          aria-label="LinkedIn"
-          class="footer-icon"
-        >
-          <img src="/icons/LinkedIn.svg" alt="LinkedIn" />
+  <main class="blog-container">
+    {
+      !isBlogIndex && (
+        <a href="/blog" class="back-to-blog" aria-label="Back to blog list">
+          ← Back to Blog
         </a>
-        <a
-          href="https://github.com/DrDrunkenstien-10"
-          target="_blank"
-          aria-label="GitHub"
-          class="footer-icon"
-        >
-          <img src="/icons/Github.svg" alt="GitHub" />
-        </a>
-        <a
-          href="mailto:atharvakamalakarjadhadh@gmail.com"
-          aria-label="Email"
-          class="footer-icon"
-        >
-          <img src="/icons/Gmail.svg" alt="Email" />
-        </a>
-      </div>
-      <p class="footer-text">
-        <strong>© 2025 Atharva Jadhav. All rights reserved.</strong>
-      </p>
-    </footer>
-  </body>
-</html>
+      )
+    }
+
+    <h1 class="blog-title">{title}</h1>
+    {date && <p class="blog-date">{date}</p>}
+    {description && <p class="blog-desc">{description}</p>}
+
+    <article class="markdown">
+      <slot />
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-icons">
+      <a
+        href="https://www.linkedin.com/in/atharva-jadhav-491235243/"
+        target="_blank"
+        aria-label="LinkedIn"
+        class="footer-icon"
+      >
+        <img src="/icons/LinkedIn.svg" alt="LinkedIn" />
+      </a>
+      <a
+        href="https://github.com/DrDrunkenstien-10"
+        target="_blank"
+        aria-label="GitHub"
+        class="footer-icon"
+      >
+        <img src="/icons/Github.svg" alt="GitHub" />
+      </a>
+      <a
+        href="mailto:atharvakamalakarjadhadh@gmail.com"
+        aria-label="Email"
+        class="footer-icon"
+      >
+        <img src="/icons/Gmail.svg" alt="Email" />
+      </a>
+    </div>
+    <p class="footer-text">
+      <strong>© 2025 Atharva Jadhav. All rights reserved.</strong>
+    </p>
+  </footer>
+</body>
 
 <style>
   /* PAGE */
