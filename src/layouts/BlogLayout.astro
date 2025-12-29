@@ -17,7 +17,8 @@ const date = frontmatter?.date ?? pageDate;
 const description = frontmatter?.description ?? pageDescription;
 const image = frontmatter?.image ?? pageImage ?? "/og/default.png";
 
-const isBlogIndex = Astro.url.pathname === "/blog";
+const cleanPath = Astro.url.pathname.replace(/\/+$/, "");
+const isBlogIndex = cleanPath === "/blog";
 
 // 👇 Build canonical URL dynamically
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
