@@ -1,0 +1,156 @@
+{
+    "experiences": [
+        {
+            "organization": {
+                "name": "Applied Technology Solutions (ApTSi)",
+                "url": "https://ap-tech-solns.com/"
+            },
+            "duration": "July 2024 – Present",
+            "location": "United States (Remote)",
+            "points": [
+                "Designed and developed three <strong>Zero Trust</strong>–based <strong>cybersecurity SaaS sub-products</strong>, delivering the first <strong>production release</strong> and supporting <strong>early customer adoption</strong>.",
+                "Architected and implemented <strong>cloud-native deployment architecture on Azure</strong> with a strong focus on <strong>cost optimization</strong> and <strong>operational efficiency</strong>.",
+                "Deployed and operated the platform <strong>from scratch on Azure</strong>, ensuring <strong>stability</strong> and <strong>availability</strong> during business hours.",
+                "Built <strong>fully automated infrastructure provisioning and teardown pipelines</strong>, enabling <strong>one-click deployments</strong> with <strong>zero manual intervention</strong>.",
+                "Designed and implemented a <strong>centralized audit logging framework</strong> to support <strong>traceability</strong>, <strong>security compliance</strong>, and <strong>system observability</strong>."
+            ],
+            "tech": [
+                {
+                    "name": "Java",
+                    "icon": "/icons/Java.svg",
+                    "link": "https://www.java.com/"
+                },
+                {
+                    "name": "TypeScript",
+                    "icon": "/icons/TypeScript.svg",
+                    "link": "https://www.typescriptlang.org/"
+                },
+                {
+                    "name": "C++",
+                    "icon": "/icons/Cpp.svg",
+                    "link": "https://isocpp.org/"
+                },
+                {
+                    "name": "Bash",
+                    "icon": "/icons/Bash.svg",
+                    "link": "https://www.gnu.org/software/bash/bash.html"
+                },
+                {
+                    "name": "Spring Boot",
+                    "icon": "/icons/Spring.svg",
+                    "link": "https://spring.io/projects/spring-boot"
+                },
+                {
+                    "name": "Express.js",
+                    "icon": "/icons/Express.png",
+                    "link": "https://expressjs.com/"
+                },
+                {
+                    "name": "Keycloak",
+                    "icon": "/icons/Keycloak.png",
+                    "link": "https://www.keycloak.org/"
+                },
+                {
+                    "name": "Angular",
+                    "icon": "/icons/Angular.svg",
+                    "link": "https://angular.io/"
+                },
+                {
+                    "name": "PostgreSQL",
+                    "icon": "/icons/PostgresSQL.svg",
+                    "link": "https://www.postgresql.org/"
+                },
+                {
+                    "name": "Kafka",
+                    "icon": "/icons/Kafka.png",
+                    "link": "https://kafka.apache.org/"
+                },
+                {
+                    "name": "RabbitMQ",
+                    "icon": "/icons/RabbitMQ.svg",
+                    "link": "https://www.rabbitmq.com/"
+                },
+                {
+                    "name": "Microsoft Azure",
+                    "icon": "/icons/Azure.svg",
+                    "link": "https://azure.microsoft.com/"
+                },
+                {
+                    "name": "Kubernetes",
+                    "icon": "/icons/Kubernetes.svg",
+                    "link": "https://kubernetes.io/"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "/icons/Docker.svg",
+                    "link": "https://www.docker.com/"
+                },
+                {
+                    "name": "NGINX",
+                    "icon": "/icons/NGINX.svg",
+                    "link": "https://www.nginx.com/"
+                },
+                {
+                    "name": "OpenTofu",
+                    "icon": "/icons/OpenTofu.svg",
+                    "link": "https://opentofu.org/"
+                },
+                {
+                    "name": "Ansible",
+                    "icon": "/icons/Ansible.svg",
+                    "link": "https://www.ansible.com/"
+                },
+                {
+                    "name": "Jenkins",
+                    "icon": "/icons/Jenkins.svg",
+                    "link": "https://www.jenkins.io/"
+                },
+                {
+                    "name": "Maven",
+                    "icon": "/icons/Maven.svg",
+                    "link": "https://maven.apache.org/"
+                },
+                {
+                    "name": "NPM",
+                    "icon": "/icons/NPM.svg",
+                    "link": "https://www.npmjs.com/"
+                },
+                {
+                    "name": "Prometheus",
+                    "icon": "/icons/Prometheus.svg",
+                    "link": "https://prometheus.io/"
+                },
+                {
+                    "name": "Grafana",
+                    "icon": "/icons/Grafana.svg",
+                    "link": "https://grafana.com/"
+                },
+                {
+                    "name": "Loki",
+                    "icon": "/icons/Loki.svg",
+                    "link": "https://grafana.com/oss/loki/"
+                },
+                {
+                    "name": "Ubuntu",
+                    "icon": "/icons/Ubuntu.svg",
+                    "link": "https://ubuntu.com/"
+                },
+                {
+                    "name": "Git",
+                    "icon": "/icons/Git.svg",
+                    "link": "https://git-scm.com/"
+                },
+                {
+                    "name": "GitHub",
+                    "icon": "/icons/Github.svg",
+                    "link": "https://github.com/"
+                },
+                {
+                    "name": "VS Code",
+                    "icon": "/icons/VSCode.svg",
+                    "link": "https://code.visualstudio.com/"
+                }
+            ]
+        }
+    ]
+}

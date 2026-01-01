@@ -300,23 +300,6 @@ import ContactLayout from "../layouts/ContactLayout.astro";
         display: block;
     }
 
-    /* Fix browser autofill background + text color */
-    .contact-form input:-webkit-autofill,
-    .contact-form input:-webkit-autofill:hover,
-    .contact-form input:-webkit-autofill:focus,
-    .contact-form textarea:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 1000px var(--color-box-bg) inset !important;
-        -webkit-text-fill-color: var(--color-text) !important;
-        caret-color: var(--color-text);
-        transition: background-color 5000s ease-in-out 0s;
-    }
-
-    input:-moz-autofill,
-    textarea:-moz-autofill {
-        box-shadow: 0 0 0 1000px var(--color-box-bg) inset;
-        color: var(--color-text);
-    }
-
     /* Primary socials (above the form) */
     .contact-primary-socials {
         display: flex;

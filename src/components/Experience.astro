@@ -1,4 +1,8 @@
-<!-- Experience -->
+---
+import data from "../data/experience.json";
+const experience = data.experiences[0];
+---
+
 <section id="experience">
     <h2>Experience</h2>
 
@@ -7,68 +11,28 @@
         <div class="experience-header">
             <div class="experience-org">
                 <a
-                    href="https://ap-tech-solns.com/"
+                    href={experience.organization.url}
                     target="_blank"
                     rel="noopener"
                     class="org-link"
                 >
-                    <span class="org-name"
-                        >Applied Technology Solutions (ApTSi)</span
-                    >
+                    <span class="org-name">{experience.organization.name}</span>
                 </a>
             </div>
 
             <div class="experience-meta">
                 <span class="experience-duration"
-                    ><strong>July 2024 – Present</strong></span
+                    ><strong>{experience.duration}</strong></span
                 >
                 <span class="experience-location"
-                    ><strong>United States (Remote)</strong></span
+                    ><strong>{experience.location}</strong></span
                 >
             </div>
         </div>
 
         <!-- Bullet points -->
         <ul class="experience-points">
-            <li>
-                Designed and developed <strong
-                    >three <strong>Zero Trust</strong>–based <strong
-                        >cybersecurity SaaS sub-products</strong
-                    ></strong
-                >, delivering the first <strong>production release</strong> and supporting
-                <strong>early customer adoption</strong>.
-            </li>
-            <li>
-                Architected and implemented <strong
-                    >cloud-native deployment architecture on <strong
-                        >Azure</strong
-                    ></strong
-                > with a strong focus on <strong>cost optimization</strong> and <strong
-                    >operational efficiency</strong
-                >.
-            </li>
-            <li>
-                Deployed and operated the platform <strong
-                    >from scratch on <strong>Azure</strong></strong
-                >, ensuring <strong>stability</strong> and <strong
-                    >availability</strong
-                > during business hours.
-            </li>
-            <li>
-                Built <strong
-                    >fully automated <strong>infrastructure provisioning</strong
-                    > and <strong>teardown pipelines</strong></strong
-                >, enabling <strong>one-click deployments</strong> with
-                <strong>zero manual intervention</strong>.
-            </li>
-            <li>
-                Designed and implemented a <strong
-                    >centralized <strong>audit logging framework</strong
-                    ></strong
-                > to support <strong>traceability</strong>, <strong
-                    >security compliance</strong
-                >, and <strong>system observability</strong>.
-            </li>
+            {experience.points.map((point) => <li set:html={point} />)}
         </ul>
 
         <!-- Tech stack -->
@@ -78,222 +42,18 @@
             </div>
 
             <div class="tech-icons">
-                <a
-                    class="tech-item"
-                    data-label="Java"
-                    href="https://www.java.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Java.svg" alt="Java" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="TypeScript"
-                    href="https://www.typescriptlang.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/TypeScript.svg" alt="TypeScript" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="C++"
-                    href="https://isocpp.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/Cpp.svg" alt="C++" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Bash"
-                    href="https://www.gnu.org/software/bash/bash.html"
-                    target="_blank"
-                >
-                    <img src="/icons/Bash.svg" alt="Bash" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Spring Boot"
-                    href="https://spring.io/projects/spring-boot"
-                    target="_blank"
-                >
-                    <img src="/icons/Spring.svg" alt="Spring Boot" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Express.js"
-                    href="https://expressjs.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Express.png" alt="Express.js" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Keycloak"
-                    href="https://www.keycloak.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/Keycloak.png" alt="Keycloak" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Angular"
-                    href="https://angular.io/"
-                    target="_blank"
-                >
-                    <img src="/icons/Angular.svg" alt="Angular" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="PostgreSQL"
-                    href="https://www.postgresql.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/PostgresSQL.svg" alt="PostgreSQL" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Kafka"
-                    href="https://kafka.apache.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/Kafka.png" alt="Kafka" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="RabbitMQ"
-                    href="https://www.rabbitmq.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/RabbitMQ.svg" alt="RabbitMQ" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Microsoft Azure"
-                    href="https://azure.microsoft.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Azure.svg" alt="Azure" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Kubernetes"
-                    href="https://kubernetes.io/"
-                    target="_blank"
-                >
-                    <img src="/icons/Kubernetes.svg" alt="Kubernetes" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Docker"
-                    href="https://www.docker.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Docker.svg" alt="Docker" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="NGINX"
-                    href="https://www.nginx.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/NGINX.svg" alt="NGINX" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="OpenTofu"
-                    href="https://opentofu.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/OpenTofu.svg" alt="OpenTofu" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Ansible"
-                    href="https://www.ansible.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Ansible.svg" alt="Ansible" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Jenkins"
-                    href="https://www.jenkins.io/"
-                    target="_blank"
-                >
-                    <img src="/icons/Jenkins.svg" alt="Jenkins" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Maven"
-                    href="https://maven.apache.org/"
-                    target="_blank"
-                >
-                    <img src="/icons/Maven.svg" alt="Maven" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="NPM"
-                    href="https://www.npmjs.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/NPM.svg" alt="NPM" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Prometheus"
-                    href="https://prometheus.io/"
-                    target="_blank"
-                >
-                    <img src="/icons/Prometheus.svg" alt="Prometheus" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Grafana"
-                    href="https://grafana.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Grafana.svg" alt="Grafana" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Loki"
-                    href="https://grafana.com/oss/loki/"
-                    target="_blank"
-                >
-                    <img src="/icons/Loki.svg" alt="Loki" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Ubuntu"
-                    href="https://ubuntu.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Ubuntu.svg" alt="Ubuntu" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="Git"
-                    href="https://git-scm.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Git.svg" alt="Git" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="GitHub"
-                    href="https://github.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/Github.svg" alt="GitHub" />
-                </a>
-                <a
-                    class="tech-item"
-                    data-label="VS Code"
-                    href="https://code.visualstudio.com/"
-                    target="_blank"
-                >
-                    <img src="/icons/VSCode.svg" alt="VS Code" />
-                </a>
+                {
+                    experience.tech.map((item) => (
+                        <a
+                            class="tech-item"
+                            data-label={item.name}
+                            href={item.link}
+                            target="_blank"
+                        >
+                            <img src={item.icon} alt={item.name} />
+                        </a>
+                    ))
+                }
             </div>
         </div>
     </div>

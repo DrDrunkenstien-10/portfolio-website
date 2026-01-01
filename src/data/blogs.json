@@ -1,0 +1,11 @@
+{
+    "blogs": [
+        {
+            "title": "Why Every Developer Should Deploy on a VPS at Least Once",
+            "slug": "my-first-post",
+            "date": "Dec 25, 2025",
+            "description": "A practical breakdown of why deploying a project on a VPS builds real-world engineering skills beyond just writing code.",
+            "ariaLabel": "Read blog: Why Every Developer Should Deploy on a VPS at Least Once"
+        }
+    ]
+}

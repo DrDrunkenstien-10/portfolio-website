@@ -1,31 +1,32 @@
-<!-- Blogs -->
+---
+import blogsData from "../data/blogs.json";
+const blogs = blogsData.blogs;
+---
+
 <section id="blogs">
     <h2>Blog</h2>
 
     <div class="blogs-grid">
-        <!-- Blog Card -->
-        <a
-            href="/posts/my-first-post"
-            class="blog-card-link"
-            aria-label="Read blog: Why Every Developer Should Deploy on a VPS at Least Once"
-        >
-            <article class="blog-card">
-                <div class="blog-header">
-                    <h3 class="blog-title">
-                        Why Every Developer Should Deploy on a VPS at Least Once
-                    </h3>
-                    <span class="blog-date">Dec 25, 2025</span>
-                </div>
+        {
+            blogs.map((blog) => (
+                <a
+                    href={`/posts/${blog.slug}`}
+                    class="blog-card-link"
+                    aria-label={blog.ariaLabel}
+                >
+                    <article class="blog-card">
+                        <div class="blog-header">
+                            <h3 class="blog-title">{blog.title}</h3>
+                            <span class="blog-date">{blog.date}</span>
+                        </div>
 
-                <p class="blog-description">
-                    A practical breakdown of why deploying a project on a VPS
-                    builds real-world engineering skills beyond just writing
-                    code.
-                </p>
+                        <p class="blog-description">{blog.description}</p>
 
-                <span class="blog-link"> Read more → </span>
-            </article>
-        </a>
+                        <span class="blog-link">Read more →</span>
+                    </article>
+                </a>
+            ))
+        }
     </div>
 </section>
 
