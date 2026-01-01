@@ -1,0 +1,185 @@
+[
+    {
+        "title": "MinuteMuse",
+        "github": "https://github.com/DrDrunkenstien-10/minute-muse",
+        "live": null,
+        "description": "An AI-powered tool that generates meeting minutes from recordings.",
+        "tech": [
+            {
+                "name": "Python",
+                "icon": "/icons/Python.svg",
+                "link": "https://www.python.org"
+            },
+            {
+                "name": "Flask",
+                "icon": "/icons/Flask.svg",
+                "link": "https://flask.palletsprojects.com"
+            },
+            {
+                "name": "ffmpeg",
+                "icon": "/icons/ffmpeg.svg",
+                "link": "https://ffmpeg.org"
+            },
+            {
+                "name": "Whisper AI",
+                "icon": "/icons/Whisper.svg",
+                "link": "https://openai.com/research/whisper"
+            },
+            {
+                "name": "Mistral AI",
+                "icon": "/icons/Mistral.png",
+                "link": "https://mistral.ai"
+            }
+        ]
+    },
+    {
+        "title": "Deplens",
+        "github": "https://github.com/DrDrunkenstien-10/deplens",
+        "live": null,
+        "description": "A CLI tool that scans project dependencies for licenses, vulnerabilities (CVEs), and version health.",
+        "tech": [
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            },
+            {
+                "name": "Picocli",
+                "icon": "/icons/Picocli.svg",
+                "link": "https://picocli.info"
+            }
+        ]
+    },
+    {
+        "title": "Wealthwise",
+        "github": "https://github.com/DrDrunkenstien-10/wealthwise",
+        "live": "https://wealthwise.ajadhav.com/",
+        "description": "A modern personal finance manager to track income, expenses, savings, receipts, and recurring transactions.",
+        "tech": [
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Spring Boot",
+                "icon": "/icons/Spring.svg",
+                "link": "https://spring.io/projects/spring-boot"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "/icons/JavaScript.svg",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            },
+            {
+                "name": "React",
+                "icon": "/icons/React.svg",
+                "link": "https://react.dev"
+            },
+            {
+                "name": "Keycloak",
+                "icon": "/icons/Keycloak.png",
+                "link": "https://www.keycloak.org"
+            },
+            {
+                "name": "PostgreSQL",
+                "icon": "/icons/PostgresSQL.svg",
+                "link": "https://www.postgresql.org"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            }
+        ]
+    },
+    {
+        "title": "Aufgabenliste",
+        "github": "https://github.com/DrDrunkenstien-10/aufgabenliste",
+        "live": null,
+        "description": "A simple task management web application supporting CRUD operations, filters and Dockerized deployment.",
+        "tech": [
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Spring Boot",
+                "icon": "/icons/Spring.svg",
+                "link": "https://spring.io/projects/spring-boot"
+            },
+            {
+                "name": "PostgreSQL",
+                "icon": "/icons/PostgresSQL.svg",
+                "link": "https://www.postgresql.org"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            },
+            {
+                "name": "HTML",
+                "icon": "/icons/HTML5.svg",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+            },
+            {
+                "name": "CSS",
+                "icon": "/icons/CSS3.svg",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "/icons/JavaScript.svg",
+                "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            },
+            {
+                "name": "Docker",
+                "icon": "/icons/Docker.svg",
+                "link": "https://www.docker.com"
+            }
+        ]
+    },
+    {
+        "title": "WikiSearch",
+        "github": "https://github.com/DrDrunkenstien-10/wiki-search",
+        "live": null,
+        "description": "A simple search engine using an inverted index on Wikipedia article text.",
+        "tech": [
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            }
+        ]
+    },
+    {
+        "title": "Playfair Cipher",
+        "github": "https://github.com/DrDrunkenstien-10/playfair-cipher",
+        "live": null,
+        "description": "Java implementation of the Playfair Cipher encryption algorithm.",
+        "tech": [
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            }
+        ]
+    }
+]

@@ -1,0 +1,54 @@
+<section class="hero" id="hero">
+    <h1 class="hero-title">
+        Hello, I’m <span class="hero-name">Atharva Jadhav</span>
+    </h1>
+    <p class="hero-rotating">
+        <span class="rotating-text"></span>
+    </p>
+</section>
+
+<style>
+    .hero {
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        scroll-margin-top: 80px;
+    }
+
+    .hero-title {
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-name {
+        color: var(--color-accent);
+    }
+
+    .hero-rotating {
+        font-size: 1.15rem;
+        opacity: 0.9;
+    }
+
+    .rotating-text::after {
+        content: "Software Engineer";
+        animation: rotateWords 7s infinite;
+        border-right: 2px solid var(--color-accent);
+        padding-right: 6px;
+    }
+
+    @keyframes rotateWords {
+        0% {
+            content: "Software Engineer";
+        }
+        25% {
+            content: "Backend & DevSecOps";
+        }
+        50% {
+            content: "Systems Thinker";
+        }
+        75% {
+            content: "Impact-Driven";
+        }
+        100% {
+            content: "Software Engineer";
+        }
+    }
+</style>
