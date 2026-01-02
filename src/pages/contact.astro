@@ -77,7 +77,6 @@ import ContactLayout from "../layouts/ContactLayout.astro";
             const form = document.getElementById(
                 "contactForm",
             ) as HTMLFormElement | null;
-
             const statusEl = document.getElementById(
                 "formStatus",
             ) as HTMLParagraphElement | null;
@@ -158,10 +157,16 @@ import ContactLayout from "../layouts/ContactLayout.astro";
                         },
                     );
 
-                    const data = await response.json();
+                    // Safer JSON parsing (response body may be empty)
+                    let data: any = null;
+                    try {
+                        data = await response.json();
+                    } catch {
+                        // ignore – no response body
+                    }
 
                     if (!response.ok) {
-                        // Rate limiting (Too Many Requests)
+                        // Rate limit handling
                         if (response.status === 429) {
                             const retryAfter =
                                 response.headers.get("Retry-After");
@@ -178,6 +183,7 @@ import ContactLayout from "../layouts/ContactLayout.astro";
                                 setTimeout(
                                     () => {
                                         submitBtn.disabled = false;
+                                        submitBtn.textContent = "Send Message";
                                     },
                                     retryAfter
                                         ? Number(retryAfter) * 1000
@@ -188,9 +194,10 @@ import ContactLayout from "../layouts/ContactLayout.astro";
                             return;
                         }
 
-                        // Field-level validation errors
+                        // Field-level validation errors (400)
                         if (
                             response.status === 400 &&
+                            data &&
                             typeof data === "object"
                         ) {
                             Object.entries(data).forEach(([field, message]) => {
@@ -214,10 +221,10 @@ import ContactLayout from "../layouts/ContactLayout.astro";
                         );
                     }
 
-                    // Success
+                    // Success (request accepted, email async)
                     form.reset();
                     statusEl.textContent =
-                        "Thanks! Your message has been sent successfully.";
+                        "Thanks! Your message has been received. I’ll get back to you soon.";
                     statusEl.classList.add("success");
                 } catch (err) {
                     statusEl.textContent =
@@ -226,7 +233,8 @@ import ContactLayout from "../layouts/ContactLayout.astro";
                             : "Unable to send message right now.";
                     statusEl.classList.add("error");
                 } finally {
-                    if (submitBtn) {
+                    // Avoid re-enabling button if rate-limit logic already handled it
+                    if (submitBtn && !submitBtn.disabled) {
                         submitBtn.disabled = false;
                         submitBtn.textContent = "Send Message";
                     }
