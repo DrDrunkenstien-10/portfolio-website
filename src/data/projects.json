@@ -181,5 +181,33 @@
                 "link": "https://maven.apache.org"
             }
         ]
+    },
+    {
+        "title": "Portfolio Website",
+        "github": "https://github.com/DrDrunkenstien-10/portfolio-website",
+        "live": "https://ajadhav.com/",
+        "description": "A personal portfolio website built with Astro.",
+        "tech": [
+            {
+                "name": "Astro",
+                "icon": "/icons/Astro.svg",
+                "link": "https://astro.build/"
+            },
+            {
+                "name": "Java",
+                "icon": "/icons/Java.svg",
+                "link": "https://www.java.com"
+            },
+            {
+                "name": "Spring Boot",
+                "icon": "/icons/Spring.svg",
+                "link": "https://spring.io/projects/spring-boot"
+            },
+            {
+                "name": "Maven",
+                "icon": "/icons/Maven.svg",
+                "link": "https://maven.apache.org"
+            }
+        ]
     }
 ]
